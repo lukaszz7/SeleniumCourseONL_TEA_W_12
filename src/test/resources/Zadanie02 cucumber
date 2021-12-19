@@ -1,0 +1,5 @@
+Scenario: Create account on the website https://hotel-testlab.coderslab.pl/
+Given Web https://hotel-testlab.coderslab.pl/ opened in browser
+When click on the icon Sign Ind
+And complete the registration form
+Then Account has been created
