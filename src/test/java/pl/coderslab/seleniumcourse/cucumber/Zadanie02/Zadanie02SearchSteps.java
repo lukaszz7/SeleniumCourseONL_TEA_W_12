@@ -54,6 +54,7 @@ public class Zadanie02SearchSteps {
         WebElement createAnAccount = driver.findElement(new By.ByName("submitAccount"));
         createAnAccount.click();
     }
+
 }
 
 
