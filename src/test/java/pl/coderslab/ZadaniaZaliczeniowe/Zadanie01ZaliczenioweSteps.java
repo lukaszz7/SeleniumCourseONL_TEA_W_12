@@ -9,9 +9,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class Zadanie01ZaliczenioweSteps {
     private WebDriver driver;
-
 
     @Given("^Web (.*) opened in browser$")
     public void openBrowser(String url) {
@@ -38,32 +39,29 @@ public class Zadanie01ZaliczenioweSteps {
         clickSignIn.click();
     }
 
-    @And("on the account site click on the + Create new address")
+    @When("on the account site click on the + Create new address")
     public void onTheAccountSiteClickOnTheCreateNewAddress() {
         WebElement gotoaddress = driver.findElement(By.id("address-link"));
         gotoaddress.click();
     }
 
-    @When("refill address to the account with the following data: (.*), (.*), (.*), (.*), (.*), (.*)")
-    public void refillAddress() {
+    @And("refill address to the account with the following data: (.*), (.*), (.*), (.*), (.*), (.*)")
+    public void refillAddress()  {
+        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
-        WebElement fillAlias = driver.findElement(By.name("alias "));
-        fillAlias.sendKeys("User");
-
-        WebElement fillAddress = driver.findElement(new By.ByName("address1"));
-        fillAddress.sendKeys("Ulica 1");
-
-        WebElement fillCity = driver.findElement(new By.ByName("city"));
-        fillCity.sendKeys("Miasto");
-
-        WebElement fillPostalCode = driver.findElement(new By.ByName("postcode"));
-        fillPostalCode.sendKeys("12-345");
-
-        WebElement selectCountry = driver.findElement(new By.ByClassName("form-control form-control-select js-country"));
-        selectCountry.getCssValue("United Kingdom");
-
-        WebElement fillPhone = driver.findElement(new By.ByName("phone"));
-        fillPhone.sendKeys("963852741");
+        WebElement Alias = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/section/div[1]/div[1]/input"));
+        Alias.sendKeys("(.*)");
+        WebElement Address = driver.findElement(new By.ByName("address1"));
+        Address.sendKeys("(.*)");
+        WebElement City = driver.findElement(new By.ByName("city"));
+        City.sendKeys("(.*)");
+        WebElement PostalCode = driver.findElement(new By.ByName("postcode"));
+        PostalCode.sendKeys("(.*)");
+        WebElement selectCountry = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/section/div[10]/div[1]/select/option[2]"));
+        selectCountry.click();
+        WebElement Phone = driver.findElement(new By.ByName("phone"));
+        Phone.sendKeys("(.*)");
+        throw new io.cucumber.java.PendingException();
     }
 
     @And("^click Save$")
