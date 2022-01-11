@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.time.Duration;
 
 public class Zadanie01ZaliczenioweSteps {
     private WebDriver driver;
@@ -45,9 +44,8 @@ public class Zadanie01ZaliczenioweSteps {
         gotoaddress.click();
     }
 
-    @And("refill address to the account with the following data: (.*), (.*), (.*), (.*), (.*), (.*)")
+    @And("refill address to the account with the following data: <alias>, <address>, <city>, <postal code>, <country>, <phone>")
     public void refillAddress()  {
-        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
         WebElement Alias = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/section/div[1]/div[1]/input"));
         Alias.sendKeys("(.*)");
@@ -71,7 +69,10 @@ public class Zadanie01ZaliczenioweSteps {
     }
 
     @Then("^address on the account has been fill$")
-    public void addressFillConfirmed() {
+    public boolean addressFillConfirmed() {
+        WebElement addressCreationConfirmationPanel = driver.findElement(By.xpath("//*[@id=\"notifications\"]/div/article"));
+        String confirmationText = addressCreationConfirmationPanel.getText();
+        return confirmationText.equals("your address has been added.");
     }
 
 }
