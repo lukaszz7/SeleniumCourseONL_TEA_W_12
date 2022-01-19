@@ -19,7 +19,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.0</version>
+            <version>4.1.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
+            <version>22.0.0</version>
             <scope>compile</scope>
         </dependency>
 
@@ -54,27 +54,33 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.1.0</version>
+            <version>7.2.2</version>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.1.0</version>
+            <version>7.2.2</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>4.1.0</version>
+            <version>4.1.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
-            <version>4.1.0</version>
+            <version>4.1.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>lc.kra.system</groupId>
+            <artifactId>system-hook</artifactId>
+            <version>3.8</version>
+            <scope>compile</scope>
         </dependency>
 
 

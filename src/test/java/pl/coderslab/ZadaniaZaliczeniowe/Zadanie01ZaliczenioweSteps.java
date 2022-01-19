@@ -44,22 +44,21 @@ public class Zadanie01ZaliczenioweSteps {
         gotoaddress.click();
     }
 
-    @And("refill address to the account with the following data: <alias>, <address>, <city>, <postal code>, <country>, <phone>")
-    public void refillAddress()  {
+    @And("^refill address to the account with the following data: (.*), (.*), (.*), (.*), (.*), (.*)$")
+    public void refillAddress(String alias, String address, String city, String postalCode, String country, String phone)  {
 
         WebElement Alias = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/section/div[1]/div[1]/input"));
-        Alias.sendKeys("(.*)");
+        Alias.sendKeys(alias);
         WebElement Address = driver.findElement(new By.ByName("address1"));
-        Address.sendKeys("(.*)");
+        Address.sendKeys(address);
         WebElement City = driver.findElement(new By.ByName("city"));
-        City.sendKeys("(.*)");
+        City.sendKeys(city);
         WebElement PostalCode = driver.findElement(new By.ByName("postcode"));
-        PostalCode.sendKeys("(.*)");
+        PostalCode.sendKeys(postalCode);
         WebElement selectCountry = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/section/div[10]/div[1]/select/option[2]"));
         selectCountry.click();
         WebElement Phone = driver.findElement(new By.ByName("phone"));
-        Phone.sendKeys("(.*)");
-        throw new io.cucumber.java.PendingException();
+        Phone.sendKeys(phone);
     }
 
     @And("^click Save$")
