@@ -6,7 +6,7 @@ Feature: Log in on account and add address
     When on the main page click on sign in
     And log in
     When on the account site click on the + Create new address
-    And ^refill address to the account with the following data: <alias>, <address>, <city>, <postal code>, <country>, <phone>$
+    And refill address to the account with the following data: <alias>, <address>, <city>, <postal code>, <country>, <phone>
     And click Save
     Then address on the account has been fill
 

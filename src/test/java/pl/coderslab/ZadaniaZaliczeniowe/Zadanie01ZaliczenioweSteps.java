@@ -63,7 +63,7 @@ public class Zadanie01ZaliczenioweSteps {
 
     @And("^click Save$")
     public void finishfill() {
-        WebElement finishfill = driver.findElement(new By.ByClassName("btn btn-primary float-xs-right"));
+        WebElement finishfill = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/footer/button"));
         finishfill.click();
     }
 
